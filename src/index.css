@@ -1,2 +1,6 @@
 @import url('bootstrap');
 @import url('bootstrap-icons');
+
+body {
+  background-color: hsl(189, 46%, 61%)
+}
