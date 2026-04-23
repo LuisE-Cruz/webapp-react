@@ -4,3 +4,8 @@
 body {
   background-color: hsl(189, 46%, 61%)
 }
+
+a {
+  text-decoration: none;
+  color: rgb(111, 188, 201);
+}

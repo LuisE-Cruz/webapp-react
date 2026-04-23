@@ -16,6 +16,7 @@ export default function HomePage() {
     return (
         <div className="container">
             <div className="row">
+                <h2 className="text-white text-center my-2">Feel free to share your thoughts on this variety of films</h2>
                 {
                     movies.map((movie, index) => (
                         <div key={index} className="col g-3">
