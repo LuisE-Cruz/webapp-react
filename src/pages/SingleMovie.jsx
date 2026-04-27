@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { Link } from 'react-router-dom'
 import { data, useParams } from "react-router-dom"
+import AddReviewForm from "../components/AddReviewForm"
 
 
 export default function SingleMovie() {
@@ -32,8 +33,8 @@ export default function SingleMovie() {
     return (
         <>
             <div className="container">
-                <div className="row">
-                    <div className="col g-3">
+                <div className="row justify-content-center">
+                    <div className="col-6 g-3">
                         <div className="card h-100 mx-auto text-center text-info bg-dark" style={{ width: "18rem" }}>
                             <img src={`http://127.0.0.1:3010/${movie?.image}`} className="card-img-top h-100" alt={movie?.title} />
                             <div className="card-body text-white">
@@ -45,6 +46,10 @@ export default function SingleMovie() {
                                 <Link to='/' className="text-white btn btn-outline-info px-3 py-1 border-2 mt-1">Go back</Link>
                             </div>
                         </div>
+                    </div>
+                    <div className="col-6 g-3 my-auto">
+                        <AddReviewForm movieId={movieId} />
+
                     </div>
                 </div>
             </div>
