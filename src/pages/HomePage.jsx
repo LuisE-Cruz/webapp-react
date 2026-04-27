@@ -5,10 +5,10 @@ export default function HomePage() {
 
     const [movies, setMovies] = useState([])
 
+    const api_url = import.meta.env.VITE_SERVER_API;
     useEffect(() => {
-        const api_url = import.meta.env.VITE_SERVER_API + "/movies";
 
-        fetch(api_url)
+        fetch(api_url + "/movies/")
             .then(response => response.json())
             .then(data => setMovies(data))
     }, []);
@@ -21,7 +21,7 @@ export default function HomePage() {
                     movies.map((movie, index) => (
                         <div key={index} className="col g-3">
                             <div className="card h-100 mx-auto text-center text-info bg-dark" style={{ width: "18rem" }}>
-                                <img src={`http://127.0.0.1:3010/${movie.image}`} className="card-img-top h-100" alt={movie.title} />
+                                <img src={`${api_url}/${movie.image}`} className="card-img-top h-100" alt={movie.title} />
                                 <div className="card-body text-white">
                                     <h3 className="card-title">{movie.title}</h3>
                                     <div className="card-text"><span className="text-info"> Genre:</span> {movie.genre} </div>

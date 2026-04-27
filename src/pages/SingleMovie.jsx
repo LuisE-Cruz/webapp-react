@@ -10,6 +10,8 @@ export default function SingleMovie() {
 
     const [movie, setMovie] = useState(null)
 
+
+
     const api_url = import.meta.env.VITE_SERVER_API + "/movies/";
 
     useEffect(() => {
@@ -30,6 +32,11 @@ export default function SingleMovie() {
         return stars;
     }
 
+    const handleReview = (newReview) => {
+        setMovie({ ...movie, reviews: [...(movie.reviews || []), newReview] })
+    }
+
+
     return (
         <>
             <div className="container">
@@ -48,7 +55,7 @@ export default function SingleMovie() {
                         </div>
                     </div>
                     <div className="col-6 g-3 my-auto">
-                        <AddReviewForm movieId={movieId} />
+                        <AddReviewForm movieId={movieId} handleReview={handleReview} />
 
                     </div>
                 </div>

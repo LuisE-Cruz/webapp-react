@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function AddReviewForm({ movieId }) {
+export default function AddReviewForm({ movieId, handleReview }) {
     const initialFormData = {
         name: '',
         vote: 1,
@@ -23,6 +23,7 @@ export default function AddReviewForm({ movieId }) {
         })
             .then(response => response.json())
             .then(data => {
+                handleReview(data)
                 console.log('Review submitted successfully:', data);
             })
             .catch(error => {
